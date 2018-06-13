@@ -1,0 +1,17 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:9000/eureka/
+server:
+  port: 9005
+spring:
+  application:
+    name: mjxy-zuul
+zuul:
+  routes:
+    api-a:
+      path: /api-a/**
+      serviceId: df-ribbon
+    api-b:
+      path: /api-b/**
+      serviceId: df-feign
